@@ -4,7 +4,7 @@
   "description": "",
   "version": "1.0.0",
   "engines": {
-    "vscode": "^1.37.0"
+    "vscode": "^1.31.0"
   },
   "categories": [
     "Other"
@@ -14,10 +14,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sxei/vscode-plugin-demo"
+    "url": "https://github.com/jiansong0720/language-tools"
   },
   "publisher": "jiansong",
-  "main": "./extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
@@ -88,7 +88,7 @@
     "@types/glob": "^7.1.1",
     "@types/mocha": "^5.2.6",
     "@types/node": "^10.12.21",
-    "@types/vscode": "^1.37.0",
+    "@types/vscode": "^1.31.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "request": "^2.88.0",
