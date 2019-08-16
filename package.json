@@ -1,0 +1,98 @@
+{
+  "name": "language-tools",
+  "displayName": "泛微-多语言",
+  "description": "",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.37.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sxei/vscode-plugin-demo"
+  },
+  "publisher": "jiansong",
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.checklabel",
+        "title": "测试标签"
+      },
+      {
+        "command": "extension.getlabel",
+        "title": "获取标签"
+      },
+      {
+        "command": "extension.getSql",
+        "title": "获取SQL"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.checklabel",
+        "key": "ctrl+alt+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.getlabel",
+        "key": "ctrl+alt+u",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection && resourceFilename =~ /.js|.vue|.ts/",
+          "command": "extension.checklabel",
+          "group": "6_Starling"
+        },
+        {
+          "when": "editorHasSelection && resourceFilename =~ /.js|.vue|.ts/",
+          "command": "extension.getlabel",
+          "group": "6_Starling"
+        },
+        {
+          "when": "resourceFilename =~ /.js|.vue|.ts/",
+          "command": "extension.getSql",
+          "group": "6_Starling"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "泛微-多语言",
+      "properties": {
+        "cookie": {
+          "type": "string",
+          "description": "泛微的Cookie"
+        },
+        "modulecode": {
+          "type": "string",
+          "description": "前端模块名称"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "webpack --mode production",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
+    "@types/vscode": "^1.37.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+
+}
